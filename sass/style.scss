@@ -1,0 +1,41 @@
+@charset "UTF-8";
+$fontSize:12px;
+$color:#333;
+$lineHeight:1.5;
+
+body{margin:0;padding:0;font:#{$fontSize}/#{$lineHeight} simsun;color:$color;}
+.clear-hidden{overflow:hidden;*zoom:1;}
+.box{
+    @extend .clear-hidden;
+    border:1px solid $color;
+}
+.left{
+    float:left;
+    width:50%;
+    border-right:1px solid #ff0000;
+}
+.right{
+    @extend .clear-hidden;
+}
+
+@mixin center-block {
+    margin-left:auto;
+    margin-right:auto;
+}
+.demo{
+    @include center-block;
+
+    :hover{
+        background:#000;
+    }
+}
+
+
+
+@mixin abc{
+    width:100px;
+    height:1000px;
+    background:$color;
+}
+
+

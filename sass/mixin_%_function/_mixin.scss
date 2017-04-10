@@ -1,0 +1,51 @@
+
+@mixin center-block($extend: true){
+    @if $extend{
+        @extend %center-block;
+    }@else{
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+
+%center-block{
+    @include center-block(false);
+}
+
+$lte7:true !default;
+
+@mixin inline-block{
+    display:inline-block;
+    @if $lte7{
+        *display:inline;
+        *zoom:1;
+    }
+}
+
+@mixin float($float:left){
+    float:$float;
+    @if $lte7{
+        display:inline;
+    }
+}
+
+@mixin disabled($bgColor:#efefef,$textColor:#999){
+    background-color:$bgColor !important;
+    color:$textColor !important;
+    cursor:pointer !important;
+}
+
+@mixin box-shadow($shadow...){
+    -webkit-box-shadow:$shadow;
+    box-shadow:$shadow;
+}
+
+@mixin header{
+    #header{
+        @content;
+    }
+}
+
+%center-block{
+    @include center-block;
+}

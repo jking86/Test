@@ -1,0 +1,49 @@
+@import 'mixin';
+
+#header{
+    width:1000px;
+    @include center-block;
+}
+.gallery{
+    width:600px;
+    @include center-block;
+}
+
+#header2{
+    width:1180px;
+    @extend %center-block;
+}
+.gallery2{
+    width:600px;
+    @extend %center-block;
+}
+
+.inline-block{
+    @include inline-block;
+}
+
+.fl{
+    @include float;
+}
+.fr{
+    @include float(right);
+}
+
+.disabled{
+    @include disabled;
+}
+
+.shadow1{
+    @include box-shadow(0 0 5px rgba(0,0,0,.3));
+}
+.shadow2{
+    @include box-shadow(0 0 5px rgba(0,0,0,.3),inset 0 0 3px rgba(255,255,255,.5));
+}
+
+@include header{
+    width:1000px;
+    height:200px;
+    .logo{
+        width:200px;
+    }
+}
